@@ -1,0 +1,43 @@
+services:
+
+  # MARIADB SERVER
+  mariadb:
+    image: mariadb:lts
+    container_name: mariadb-mamba
+    volumes:
+      - database_mb:/var/lib/mysql
+    environment:
+      - MARIADB_ROOT_PASSWORD=linu0
+    networks:
+      - infra-network
+    ports:
+      - 3306:3306
+
+
+  # MYSQL-SERVER
+
+  # mysql-server_5.6:
+  #   image: mariadb:lts
+  #   container_name: mariadb-mamba
+  #   volumes:
+  #     - mariadblts:/var/lib/mysql
+  #   environment:
+  #     - MARIADB_ROOT_PASSWORD=mamba
+  #   networks:
+  #     - infra-network-mamba
+
+  #   ports:
+  #     - 3600:3606
+
+
+volumes:
+  database_mb:
+    name: database_mb
+    external: true
+
+
+networks:
+  infra-network:
+    name: infra-network
+    external: true
+
