@@ -1,0 +1,2 @@
+# Comando para contruir nova imagem, padrão register ufopa:
+# docker build -t registry.ufopa.edu.br/library/<nome da imagem>:<tag>
